@@ -9,8 +9,8 @@ def main():
 @app.route('/process_inputs', methods=['POST'])
 def process_inputs():
     name = request.form.get('input_name', '')
-    dropdown = request.form.get('input_dropdown', '')
-    select = request.form.get('input_select', '')
-    freeform = request.form.get('input_freeform', '')
+    Console = request.form.get('Console', '')
+    Genre = request.form.get('Genre', '')
+    Rating = request.form.get('Rating', '')
     return render_template("main_page.html", input_data=dropdown,
-                           output="You're a wizard %s." % name)
+                           output="With the search constraints of " + Console + ", " + Genre + ", and " + Rating + ", we have determined 0 games for you.")
